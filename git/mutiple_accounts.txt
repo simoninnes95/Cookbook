@@ -1,0 +1,5 @@
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
+https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574
+
+https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e
