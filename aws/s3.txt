@@ -1,0 +1,1 @@
+aws s3 mb  s3://<some-bucket-name> --region eu-west-1
