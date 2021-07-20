@@ -1,3 +1,8 @@
 df.na.drop(subset=["col_X"])
 
 df.filter(df.col_X.isNotNull())
+
+# cast types
+from pyspark.sql.types import IntegerType
+
+df = df.withColumn("pipe_width", F.col("pipe_width").cast(IntegerType()))
