@@ -1,3 +1,0 @@
-df.na.drop(subset=["col_X"])
-
-df.filter(df.col_X.isNotNull())

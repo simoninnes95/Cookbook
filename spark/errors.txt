@@ -1,0 +1,6 @@
+AnalysisException:Table or view not found when trying to query a global temp view
+
+df.createOrReplaceGlobalTempView("<global-view-name>")
+
+%sql
+select * from global_temp.<global-view-name>;
