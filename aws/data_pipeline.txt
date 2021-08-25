@@ -1,0 +1,7 @@
+aws datapipeline create-pipeline --name pipeline_name --unique-id token
+
+aws datapipeline put-pipeline-definition --pipeline-id <your-pipeline-id> --pipeline-definition file://pipeline_definition.json
+
+aws datapipeline activate-pipeline --pipeline-id <your-pipeline-id>
+
+aws datapipeline list-pipelines

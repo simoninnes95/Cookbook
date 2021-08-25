@@ -1,0 +1,7 @@
+parquet vs delta tables
+
+https://stackoverflow.com/questions/65320949/parquet-vs-delta-format-in-azure-data-lake-gen-2-store
+
+delta table transaction log
+
+https://databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html
