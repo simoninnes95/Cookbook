@@ -1,0 +1,3 @@
+Wipe usb
+
+https://averagelinuxuser.com/how-to-format-bootable-usb-to-normal/
