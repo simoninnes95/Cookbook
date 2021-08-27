@@ -13,3 +13,7 @@ $ sha1sum manjaro-kde-21.1.0-210817-linux513.iso
 > 4d18f0b445434af814974b4942c80ee8f3266efe  manjaro-kde-21.1.0-210817-linux513.iso
 
 compare to sum online -> 4d18f0b445434af814974b4942c80ee8f3266efe 
+
+create bootable usb
+
+$ sudo dd if=manjaro-kde-21.1.0-210817-linux513.iso of=/dev/sdb1 bs=1M status=progress
