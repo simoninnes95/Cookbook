@@ -17,3 +17,113 @@ compare to sum online -> 4d18f0b445434af814974b4942c80ee8f3266efe
 create bootable usb
 
 $ sudo dd if=manjaro-kde-21.1.0-210817-linux513.iso of=/dev/sdb1 bs=1M status=progress
+
+Installing Manjaro
+
+disable secure boot
+UEFI mode on
+RAID off
+
+
+Installing azure storage explorer
+
+https://docs.microsoft.com/en-us/answers/questions/37870/problem-installing-azure-explorer-on-linux-vm-not.html
+
+pamac install gnome-keyring
+pacman -S gnome-keyring
+
+pamac remove gnome-keyring
+pacman -R gnome-keyring
+
+pamac install seahorse
+pacman -S seahorse
+
+pamac remove seahorse
+pacman -R seahorse
+
+
+Install storage-explorer using snap
+Run sudo snap connect storage-explorer:password-manager-service :password-manager-service
+Install gnome-keyring
+Install seahorse
+Open seahorse and toggle the padlock icon for the Default keyring
+
+Installing microsoft teams
+
+https://discover.manjaro.org/packages/libxshmfence
+
+https://discover.manjaro.org/packages/libaio
+
+install yay
+
+install locate
+
+search for correct teams in AUR
+
+aur/teams 1.4.00.13653-1 (+233 14.28)
+
+Install zsh
+
+https://www.howtoforge.com/tutorial/how-to-setup-zsh-and-oh-my-zsh-on-linux/
+
+Install git and connect to azure devops
+
+https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#questions-and-troubleshooting
+
+create -> $ touch ~/.ssh/id_rsa
+create -> $ touch ~/.ssh/id_rsa.pub
+
+change permissions -> $ sudo chmod 600 /path/to/my/key
+                   -> $ sudo chmod 600 /path/to/my/key.pub
+
+                   -> $ sudo chmod 755 ~/.ssh
+
+$ cat ~/.ssh/id_rsa.pub
+
+generate ssh key -> ssh-keygen -C "simon.innes@thameswater.co.uk"
+
+add publich key to Azure DevOps
+
+test it works $ ssh -T git@ssh.dev.azure.com
+Should recieve -> remote: Shell access is not supported
+
+$ git clone <ssh-link>
+
+authenticate to Thameswater team with vscode
+
+Click "Team"
+
+Copy OTP code -> DWN89TCPG
+
+Add multiple git accounts
+
+https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e
+
+https://docs.github.com/en/github/authenticating-to-github/troubleshooting-ssh/error-permission-denied-publickey
+
+https://xiaolishen.medium.com/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693
+
+https://stackoverflow.com/questions/47455300/ssh-config-bad-configuration-option-usekeychain-on-mac-os-sierra-10-12-6
+
+generate a second set of ssh keys using above steps
+
+create a config file -> $ touch ~/.ssh/config
+
+Add various hosts ->
+
+    # Thames GitHub account
+    Host github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    # UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+
+    # Academy GitHub account
+    Host github.com-academy
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    # UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa_academy
+
