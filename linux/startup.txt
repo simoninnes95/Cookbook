@@ -127,3 +127,33 @@ Add various hosts ->
     # UseKeychain yes
     IdentityFile ~/.ssh/id_rsa_academy
 
+Install docker 
+
+https://linuxconfig.org/manjaro-linux-docker-installation
+
+sudo pacman -Syu
+
+sudo pacman -S docker
+
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+
+sudo docker version
+
+sudo docker info
+
+Installing:
+pamac install docker-compose
+pacman -S docker-compose
+
+Removing:
+pamac remove docker-compose
+pacman -R docker-compose
+
+Installing:
+pamac install docker
+pacman -S docker
+
+Removing:
+pamac remove docker
+pacman -R docker
