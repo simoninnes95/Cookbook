@@ -1,0 +1,5 @@
+Linux Bugs
+
+* docker installation of airflow webserver
+* HDMI port not working
+* zoom installation acting up
