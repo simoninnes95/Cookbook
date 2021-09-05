@@ -173,3 +173,8 @@ https://docs.anaconda.com/anaconda/install/linux/
 * package dependencies
 
 $ pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl  alsa-lib libglvnd
+
+* tried to install to root/anaconda3 -> did not work
+* Also tried to home/simon_innes/anaconda3
+
+https://idroot.us/install-anaconda-manjaro-20/
