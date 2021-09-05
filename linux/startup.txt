@@ -157,3 +157,19 @@ pacman -S docker
 Removing:
 pamac remove docker
 pacman -R docker
+
+Install anaconda
+
+* Use docs on anaconda page
+
+https://docs.anaconda.com/anaconda/install/linux/
+
+* Download the .sh for relevant distro
+
+* Verify sha1sum
+
+* follow instructions to run .sh script
+
+* package dependencies
+
+$ pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl  alsa-lib libglvnd

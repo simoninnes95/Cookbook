@@ -1,3 +1,8 @@
 $ chmod +x <fileName>
 
 $ ./fileName
+
+
+get architecure on linux 
+
+$ uname -m
