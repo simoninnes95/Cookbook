@@ -1,0 +1,11 @@
+change shell 
+
+$ chsh
+
+/root is the location of the system User
+
+To access /root go to -> 
+
+$ sudo su 
+
+
