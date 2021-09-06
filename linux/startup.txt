@@ -1,8 +1,8 @@
-Wipe usb
+# Wipe usb
 
 https://averagelinuxuser.com/how-to-format-bootable-usb-to-normal/
 
-create bootable usb with dd
+# create bootable usb with dd
 
 https://www.cyberciti.biz/faq/creating-a-bootable-ubuntu-usb-stick-on-a-debian-linux/
 
@@ -25,7 +25,7 @@ UEFI mode on
 RAID off
 
 
-Installing azure storage explorer
+# Installing azure storage explorer
 
 https://docs.microsoft.com/en-us/answers/questions/37870/problem-installing-azure-explorer-on-linux-vm-not.html
 
@@ -42,13 +42,14 @@ pamac remove seahorse
 pacman -R seahorse
 
 
-Install storage-explorer using snap
+# Install storage-explorer using snap
+
 Run sudo snap connect storage-explorer:password-manager-service :password-manager-service
 Install gnome-keyring
 Install seahorse
 Open seahorse and toggle the padlock icon for the Default keyring
 
-Installing microsoft teams
+# Installing microsoft teams
 
 https://discover.manjaro.org/packages/libxshmfence
 
@@ -62,11 +63,11 @@ search for correct teams in AUR
 
 aur/teams 1.4.00.13653-1 (+233 14.28)
 
-Install zsh
+# Install zsh
 
 https://www.howtoforge.com/tutorial/how-to-setup-zsh-and-oh-my-zsh-on-linux/
 
-Install git and connect to azure devops
+# Install git and connect to azure devops
 
 https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#questions-and-troubleshooting
 
@@ -95,7 +96,7 @@ Click "Team"
 
 Copy OTP code -> DWN89TCPG
 
-Add multiple git accounts
+# Add multiple git accounts
 
 https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e
 
@@ -127,7 +128,7 @@ Add various hosts ->
     # UseKeychain yes
     IdentityFile ~/.ssh/id_rsa_academy
 
-Install docker 
+# Install docker 
 
 https://linuxconfig.org/manjaro-linux-docker-installation
 
@@ -158,7 +159,7 @@ Removing:
 pamac remove docker
 pacman -R docker
 
-Install anaconda
+# Install anaconda
 
 * Use docs on anaconda page
 
@@ -178,3 +179,15 @@ $ pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage lib
 * Also tried to home/simon_innes/anaconda3
 
 https://idroot.us/install-anaconda-manjaro-20/
+
+change to bash Shell
+
+run anaconda-navigator
+
+Can see that in the .bashrc file the anaconda code has been added
+
+Must change default / system shell to zsh to be able to run anaconda here
+
+# Display configuration
+
+https://forum.manjaro.org/t/monitor-detected-but-black-screen/32391
