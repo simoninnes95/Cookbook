@@ -10,3 +10,7 @@ df = df.withColumn("pipe_width", F.col("pipe_width").cast(IntegerType()))
 # count distinct
 
 df.select(F.countDistinct("colName")).show()
+
+# max or min
+
+df.select(F.min("DateTime")).show()
