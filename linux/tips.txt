@@ -8,4 +8,18 @@ To access /root go to ->
 
 $ sudo su 
 
+To look up connection settings and configuration of x server
+
+$ xrandr
+
+PCI configs
+
+$ mhwd --listinstalled
+
+To view nvidia settings
+
+$ nvidia-settings
+
+
+
 
