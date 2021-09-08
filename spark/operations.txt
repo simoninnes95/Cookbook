@@ -14,3 +14,8 @@ df.select(F.countDistinct("colName")).show()
 # max or min
 
 df.select(F.min("DateTime")).show()
+
+# filter based on list
+
+not in list
+df.filter(~F.col("SiteID").isin(list))

@@ -1,0 +1,63 @@
+# Airflow Chat Notes:
+
+* What is Airflow
+    - workflow management tool
+    - provide some alternatives
+    - key feature is the use of DAGs
+
+* Key / Unique features:
+
+    - Easy to use and maintain
+    - Open-source
+    - Robust integration
+    - Simple UI
+    - Directed Acyclic Graphs (DAGs)
+
+# Setup:
+
+# What is the problem:
+
+* docker-compose does not build webserver or runs indefinitely
+
+# Assumptions:
+
+* Nothing wrong with docker file as I have run it before
+* This should work across OS's
+
+# What have I tried:
+
+* Tried running on Mac, same result
+* Trying to find out how to limit pip
+* Tested that docker can runn hello-world
+
+# Solution (What did I do):
+
+* I downloaded the official airflow image - from the docs -> 
+
+https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
+
+* Ran command to create .env variables
+
+$ mkdir -p ./dags ./logs ./plugins
+$ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+
+$ docker-compose up airflow-init
+
+* Get the container name
+
+$ docker-ps
+
+* Bind to webserver
+
+$ docker run -p 5000:8080 --entrypoint /bin/bash -ti  apache/airflow
+
+$ docker-compose up
+
+https://stackoverflow.com/questions/55892142/cant-access-webserver-of-airflow-after-run-the-container/55894168
+
+* In a new terminal -> Navigate to domain
+
+$ airflow webserver -p 8080
+
+* Modified yaml file to include the /include directory for SQL
+
