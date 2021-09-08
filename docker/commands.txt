@@ -1,0 +1,3 @@
+Include more information
+
+$ docker-compose --verbose up
