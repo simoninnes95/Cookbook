@@ -57,7 +57,12 @@ https://stackoverflow.com/questions/55892142/cant-access-webserver-of-airflow-af
 
 * In a new terminal -> Navigate to domain
 
+* Connect to container first
+
 $ airflow webserver -p 8080
 
 * Modified yaml file to include the /include directory for SQL
 
+* To clean up & stop volumes
+
+$ docker-compose down --volumes --rmi all
