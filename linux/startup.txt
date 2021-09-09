@@ -191,3 +191,27 @@ Must change default / system shell to zsh to be able to run anaconda here
 # Display configuration
 
 https://forum.manjaro.org/t/monitor-detected-but-black-screen/32391
+
+# Installing progresql
+
+https://dev.to/tusharsadhwani/how-to-setup-postgresql-on-manjaro-linux-arch-412l
+
+sudo pacman -S yay
+yay postgresql pgadmin4
+
+sudo -u postgres -i # login as postgres
+initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data/'
+exit
+
+sudo systemctl enable --now postgresql
+sudo systemctl status postgresql # to check for any errors
+
+psql -U postgres
+
+postgres=# \password # to set password
+
+$ su
+
+# cd /var/lib/postgres/data
+# cp pg_hba.conf pg_hba.conf.backup # in case you mess up
+# nano pg_hba.conf
