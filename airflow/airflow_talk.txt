@@ -1,9 +1,18 @@
 # Airflow Chat Notes:
 
+* Intro:
+
+    - Installation on docker
+    - Manjaro
+    - Images being broken
+
 * What is Airflow
     - workflow management tool
-    - provide some alternatives
-    - key feature is the use of DAGs
+        - airbnb 2014 
+        - uses:
+            - training, testing and deploying ml models
+            - Ingesting data from REST APIs
+            - Co-ordinaiting ETL / ELT 
 
 * Key / Unique features:
 
@@ -11,7 +20,83 @@
     - Open-source
     - Robust integration
     - Simple UI
-    - Directed Acyclic Graphs (DAGs)
+    - Use of DAGs (show this in train 1)
+
+* Most well known tools use DAGs
+    - often defined as yml, or in the UI
+    - Airflow uses python scripts to define DAGs
+
+* Go over DAG file
+    - DAF file breakdown
+        - imports
+        - default args
+        - define dag
+        - task dependencies
+    - Show env
+    - Show python & sql
+
+* Airflow theory
+
+    - architecture 
+        - User
+        - dags folder
+        - airflow scheduler checks dags
+        - adds to execution que
+        - airflow workers
+            - types of executors
+        - airflow metastore
+            - success, queued, executed, conditions on running
+        - airflow webserver
+
+* Go over data pipeline definition
+
+    - what are we trying to achieve
+    - xml -> postgres
+
+# Demonstration
+
+* $ sudo docker-compose up
+
+* New terminal $ docker ps
+
+* Connect to container 
+
+* sudo docker run -p 5000:8080 --entrypoint /bin/bash -ti  apache/airflow:2.1.3
+
+* airflow@ba984c28b22a:/opt/airflow$ airflow webserver -p 8080
+
+* Navigate to localhost
+
+    - UI
+    - Example DAGs
+    - 
+    - python script
+    - sql script
+    - logs
+
+* Show the airflow metastore:
+
+    - $ sudo docker exec -it efdb129739f0 bash
+    - $ psql -h localhost -p 5432 -U airflow -W
+    - \d
+
+
+* REAL LIFE DEBUGGING 
+
+python3 /opt/airflow/dags/python_scripts/process_xml.py'
+
+    - Show docker file
+    - Show path in pytho script
+    - Show log file error
+
+
+
+
+
+
+
+
+
 
 # Setup:
 
