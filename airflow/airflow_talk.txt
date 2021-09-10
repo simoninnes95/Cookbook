@@ -27,7 +27,7 @@
     - Airflow uses python scripts to define DAGs
 
 * Go over DAG file
-    - DAF file breakdown
+    - DAG file breakdown
         - imports
         - default args
         - define dag
