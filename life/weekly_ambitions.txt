@@ -1,0 +1,132 @@
+WEEKLY AMBITIONS:
+
+17/05/21
+
+* Review all KPI's and their calculation methods
+* Document KPI calculation methods
+* Review HWM pipelines and document weak points (Discuss these with Jan)
+* Implement some small optimisations to HWM pipelines
+* Close 2am pipeline failure testing
+
+24/05/21:
+
+* Implement Optimisation for PullHWMData
+* SIT Release this Thursday 
+* Look into PowerBI data linking
+* Discuss future optimisations for HWM & decide on plan 
+* Sharing data across environments
+
+31/05/21:
+
+* PRD Release                                                                       |Done
+* Implement SLM data sharing                                                        |
+* Look into alerting pipelines                                                      |Done
+* Check % comms KPI                                                                 |Done
+* SQL Optimisations                                                                 |Done
+* Check data quality calculation                                                    |
+
+07/06/21:
+
+* Finalise Alerting System                                                          |Done
+* Implement SLM data sharing                                                        |
+* Implement trigger management                                                      |
+* Check data quality calculation                                                    |Done
+* Look into source HWM data                                                         |Done
+
+21/06/21:
+
+* Finalise Trigger Management                                                       |Done
+* SIT Release                                                                       |Done
+* PRD Release                                                                       |
+* Check data quality calculation                                                    |
+
+28/06/21:
+
+* PRD Release                                                                       |Done
+* Check data quality calculation                                                    |Done
+* Upgrade to DBRT 7.3                                                               |Done
+* Plan for Metasphere tasks & understand requirements (maybe start building?)       |Done
+
+05/07/21:
+
+* Gaps in HWM                                                                       |Done
+* Check data quality calculation                                                    |Done
+* Upgrade to DBRT 7.3 (SIT Release)                                                 |Done
+* Metasphere templates for pipelines                                                |Done
+
+12/07/21:
+
+* Gaps in HWM                                                                       |Done
+* PRD Release (Runtime)                                                             |Done
+* SIT Release (Sprint 4)                                                            |
+* Implement sharing of hwm data                                                     |Done
+* Sprint 5 tasks                                                                    |Done
+
+19/07/21:
+
+* SIT Release (Sprint 4)                                                            |Done
+* PRD Release (Runtime)                                                             |Done
+* Pull EDM Data                                                                     |Done
+* Implement triggers for sharing of hwm data                                        |
+
+26/07/21:
+
+* Implement triggers for sharing of hwm data                                        |Done
+* Finalise EDM data ingestion                                                       |Done
+* Create EDA framework                                                              |Done
+* Carry out initial EDA on Metasphere                                               |N/A
+* Initial EDA on EDM data                                                           |N/A
+
+02/08/21:
+
+* Fix IS bug & monitor change                                                       |Done
+* SIT Release                                                                       |Done
+* PRD Release                                                                       |Done
+* Carry out initial EDA on Metasphere                                               |Done
+* Initial EDA on EDM data                                                           |Done
+* Look into HSI & EDM Data                                                          |
+* Look into next sprint tasks                                                       |
+
+23/08/21:
+
+* Catch up on where the team is                                                     |Done
+* Delta table issue                                                                 |Done
+* Finish sourcing of flow data                                                      |Done
+* Look into HSI & EDM Data                                                          |Done
+* Look into next sprint tasks                                                       |Done
+* Change umon3 & umon4                                                              |Done
+
+30/08/21:
+
+* Catch up on video recordings                                                      |Done
+* Source EDM data & build ingestion                                                 |Done
+* PRD Release                                                                       |Done
+* Support Lizette with SP's                                                         |
+
+06/09/21:
+
+* Get metasphere pipeline up and running                                            |TBC
+* Investigate HWM gaps                                                              |TBC
+* Look into backfill pipeline re-build                                              |TBC
+* Wrap up EDM sourcing                                                              |Done
+* Get list of monitors that are not in historical pull                              |Done
+
+13/09/21:
+
+* Get metasphere pipeline up and running                                            |
+* Investigate HWM gaps                                                              |
+* Look into backfill pipeline re-build                                              |
+* PRD Release                                                                       |
+* Look into new tasks                                                               |
+* Local version of GE working                                                       |
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BACKLOG
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Change cluster configuration -> 3 workers and max timeout of 60 mins
+* Update release pipelines
+* Update IS pipelines
+* Greg %run DMAf
+* Repos questions
+

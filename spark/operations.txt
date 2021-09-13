@@ -7,6 +7,18 @@ from pyspark.sql.types import IntegerType
 
 df = df.withColumn("pipe_width", F.col("pipe_width").cast(IntegerType()))
 
+from pyspark.sql.functions import unix_timestamp, from_unixtime
+
+df = spark.createDataFrame(
+    [("11/25/1991",), ("11/24/1991",), ("11/30/1991",)], 
+    ['date_str']
+)
+
+df2 = df.select(
+    'date_str', 
+    from_unixtime(unix_timestamp('date_str', 'MM/dd/yyy')).alias('date')
+)
+
 # count distinct
 
 df.select(F.countDistinct("colName")).show()
