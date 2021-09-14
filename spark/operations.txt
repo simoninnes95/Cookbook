@@ -19,6 +19,22 @@ df2 = df.select(
     from_unixtime(unix_timestamp('date_str', 'MM/dd/yyy')).alias('date')
 )
 
+# Using spark functions timestamp
+
+from pyspark.sql.functions import col, unix_timestamp, to_date
+
+#sample data
+df = sc.parallelize([['12-21-2006'],
+                     ['05-30-2007'],
+                     ['01-01-1984'],
+                     ['12-24-2017']]).toDF(["date_in_strFormat"])
+df.printSchema()
+
+df = df.withColumn('date_in_dateFormat', 
+                   to_date(unix_timestamp(col('date_in_strFormat'), 'MM-dd-yyyy').cast("timestamp")))
+df.show()
+df.printSchema()
+
 # count distinct
 
 df.select(F.countDistinct("colName")).show()
