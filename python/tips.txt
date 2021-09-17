@@ -16,3 +16,7 @@ If you are using cpython (which is the most common, as it's the reference implem
 python -B foo.py
 
 Another option, as noted by tcaswell, is to set the environment variable PYTHONDONTWRITEBYTECODE to any value (according to python's man page, any "non-empty string").
+
+# Using plt.subplots()
+
+https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca
