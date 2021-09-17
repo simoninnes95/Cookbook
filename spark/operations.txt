@@ -47,3 +47,17 @@ df.select(F.min("DateTime")).show()
 
 not in list
 df.filter(~F.col("SiteID").isin(list))
+
+# create dataframe
+
+columns = ["site_id","date_time", "flow"]
+data = [
+          ("logger1", "2021/01/22", "200"), ("logger2", "2021/01/23", "150"), ("logger1", "2021/01/24", "320"),
+          ("Logger1", "2021/01/25", "240"), ("Logger1", "2021/01/27", "100"), ("LOGGER2", "2021/01/28", "160"),
+          ("LOGGER1", "2021/01/29", "560"), ("logger1", "2021/01/30", "180"), ("logger1", "2021/02/01", "410"),
+       ]
+
+rdd = spark.sparkContext.parallelize(data)
+
+df_from_rdd = rdd.toDF(columns)
+df_from_rdd.printSchema()
