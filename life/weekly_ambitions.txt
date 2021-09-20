@@ -113,12 +113,19 @@ WEEKLY AMBITIONS:
 
 13/09/21:
 
-* Get metasphere pipeline up and running                                            |
-* Investigate HWM gaps                                                              |
-* Look into backfill pipeline re-build                                              |
-* PRD Release                                                                       |
-* Look into new tasks                                                               |
-* Local version of GE working                                                       |
+* Get metasphere pipeline up and running                                            |Done
+* Investigate HWM gaps                                                              |Done
+* Look into backfill pipeline re-build                                              |Done
+* PRD Release                                                                       |Done
+* Look into new tasks                                                               |Done
+* Local version of GE working                                                       |Done
+
+20/09/21:
+
+* Get missing logger id (and chat with Jaikrit)                                     |Done
+* Databricks implementation of GE                                                   |Done
+* SIT Release                                                                       |Done
+* PRD Release                                                                       |Done
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
