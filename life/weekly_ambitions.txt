@@ -123,9 +123,17 @@ WEEKLY AMBITIONS:
 20/09/21:
 
 * Get missing logger id (and chat with Jaikrit)                                     |Done
-* Databricks implementation of GE                                                   |Done
+* Databricks implementation of GE                                                   |TBC
 * SIT Release                                                                       |Done
-* PRD Release                                                                       |Done
+* PRD Release                                                                       |
+
+27/09/21
+
+* PRD Release                                                                       |
+* GE implementation                                                                 |
+* Linking ID                                                                        |
+* Process historical sites                                                          |
+* Clarify team direction                                                            |
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
@@ -134,6 +142,5 @@ BACKLOG
 * Change cluster configuration -> 3 workers and max timeout of 60 mins
 * Update release pipelines
 * Update IS pipelines
-* Greg %run DMAf
 * Repos questions
 
