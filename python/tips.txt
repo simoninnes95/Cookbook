@@ -20,3 +20,11 @@ Another option, as noted by tcaswell, is to set the environment variable PYTHOND
 # Using plt.subplots()
 
 https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca
+
+# displaying great expectations data docs
+
+https://stackoverflow.com/questions/68023413/how-to-save-great-expectations-results-to-file-from-apache-spark-with-data-doc
+
+expectation_suite, validation_result = BasicDatasetProfiler.profile(SparkDFDataset(df))
+document_model = ProfilingResultsPageRenderer().render(validation_result)
+displayHTML(DefaultJinjaPageView().render(document_model))
