@@ -7,3 +7,9 @@ count = 1
 for chunk in dfs:
     chunk.to_csv(f'/home/user/Downloads/CIS_Automotive_Kaggle_Sample_{count}.csv')
     count += 1
+
+# check if path exists
+
+from os import path
+
+path.exists("file.txt")
