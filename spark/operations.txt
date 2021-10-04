@@ -86,3 +86,34 @@ def impute(data: DataFrame) -> DataFrame:
 
 missing_data = site_levels.groupBy("SiteName").apply(impute)
 
+# broadcast
+
+from pyspark.context import SparkContext
+
+sc = SparkContext('local', 'test')
+
+b = sc.broadcast([1, 2, 3, 4, 5])
+
+b.value
+[1, 2, 3, 4, 5]
+
+sc.parallelize([0, 0]).flatMap(lambda x: b.value).collect()
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+b.unpersist()
+
+# joins using window() functions
+
+first approach
+
+df_agg = df.groupBy('city', 'team').agg(F.mean('job').alias('job_mean'))
+
+df = df.join(df_agg, on=['city', 'team'], how='inner')
+
+second approach
+
+from pyspark.sql.window import Window
+
+window_spec = Window.partitionBy(df['city'], df['team'])
+df = df.withColumn('job_mean', F.mean(col('job')).over(window_spec))
+
