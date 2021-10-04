@@ -129,11 +129,17 @@ WEEKLY AMBITIONS:
 
 27/09/21
 
-* PRD Release                                                                       |
-* GE implementation                                                                 |
-* Linking ID                                                                        |
-* Process historical sites                                                          |
-* Clarify team direction                                                            |
+* PRD Release                                                                       |NA
+* GE implementation                                                                 |Ongoing
+* Linking ID                                                                        |Done
+* Process historical sites                                                          |Done
+* Clarify team direction                                                            |Done
+
+04/10/21:
+
+* Finish GE implementation
+* Show and Tell prep
+* Look at new tasks for sprint
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
