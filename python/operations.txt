@@ -13,3 +13,10 @@ for chunk in dfs:
 from os import path
 
 path.exists("file.txt")
+
+# writing json
+
+import json
+
+with open('data.txt', 'w') as outfile:
+    json.dump(data, outfile)
