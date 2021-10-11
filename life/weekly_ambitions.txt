@@ -137,9 +137,18 @@ WEEKLY AMBITIONS:
 
 04/10/21:
 
-* Finish GE implementation
-* Show and Tell prep
-* Look at new tasks for sprint
+* Finish GE implementation                                                          |Done
+* Show and Tell prep                                                                |Done
+* Look at new tasks for sprint                                                      |Done
+
+11/10/21:
+
+* Help Allie with SIT release
+* Help Allie with PRD release
+* Document GE implementation
+* Build DQ dash off of validation results
+* Take a look at HSI data monitors available
+* Meet Entelect
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
