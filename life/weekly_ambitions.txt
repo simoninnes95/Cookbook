@@ -143,12 +143,22 @@ WEEKLY AMBITIONS:
 
 11/10/21:
 
-* Help Allie with SIT release
-* Help Allie with PRD release
-* Document GE implementation
-* Build DQ dash off of validation results
-* Take a look at HSI data monitors available
-* Meet Entelect
+* Help Allie with SIT release                                                       |Done
+* Help Allie with PRD release                                                       |TBC
+* Document GE implementation                                                        |Done
+* Build DQ dash off of validation results                                           |TBC
+* Take a look at HSI data monitors available                                        |Done
+* Meet Entelect                                                                     |Carry
+
+18/10/21:
+
+* PRD Release                                                                       |
+* Query and view GE results 
+* Finish GE Documentation
+* Finish deploy docs
+* Round off SQL user
+* Build HSI pipeline
+* Historical data in PRD
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
