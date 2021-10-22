@@ -117,3 +117,10 @@ from pyspark.sql.window import Window
 window_spec = Window.partitionBy(df['city'], df['team'])
 df = df.withColumn('job_mean', F.mean(col('job')).over(window_spec))
 
+#Optimisation
+
+Zorder
+
+F.broadcast
+
+Checkpointing

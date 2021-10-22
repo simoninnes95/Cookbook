@@ -152,13 +152,13 @@ WEEKLY AMBITIONS:
 
 18/10/21:
 
-* PRD Release                                                                       |
-* Query and view GE results 
-* Finish GE Documentation
-* Finish deploy docs
-* Round off SQL user
-* Build HSI pipeline
-* Historical data in PRD
+* PRD Release                                                                       |Done
+* Query and view GE results                                                         |
+* Finish GE Documentation                                                           |Done
+* Finish deploy docs                                                                |Done
+* Round off SQL user                                                                |Done
+* Build HSI pipeline                                                                |Done
+* Historical data in PRD                                                            |Done
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BACKLOG
