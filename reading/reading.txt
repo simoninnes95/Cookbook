@@ -1,0 +1,11 @@
+Python GIL removal
+
+https://lukasz.langa.pl/5d044f91-49c1-4170-aed1-62b6763e6ad0/
+
+Metadata architectures
+
+https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architectures-explained
+
+real time datas unifying abstraction
+
+https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
