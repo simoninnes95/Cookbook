@@ -9,3 +9,7 @@ https://engineering.linkedin.com/blog/2020/datahub-popular-metadata-architecture
 real time datas unifying abstraction
 
 https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+
+Event sourcing architectures
+
+https://martinfowler.com/eaaDev/EventSourcing.html
