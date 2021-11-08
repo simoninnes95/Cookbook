@@ -81,6 +81,10 @@ change permissions -> $ sudo chmod 600 /path/to/my/key
 
 $ cat ~/.ssh/id_rsa.pub
 
+stronger ssh keys
+
+https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
+
 generate ssh key -> ssh-keygen -C "simon.innes@thameswater.co.uk"
 
 add publich key to Azure DevOps
