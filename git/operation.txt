@@ -1,0 +1,15 @@
+# new branch
+
+git checkout -b <new-branch-name>
+
+# new branch based on some branch
+
+git checkout -b <new-branch-name> <old-branch>
+
+# delete branch locally
+
+git branch -d localBranchName
+
+# delete branch remotely
+
+git push origin --delete remoteBranchName
