@@ -219,3 +219,7 @@ $ su
 # cd /var/lib/postgres/data
 # cp pg_hba.conf pg_hba.conf.backup # in case you mess up
 # nano pg_hba.conf
+
+# SSH config
+
+https://linuxize.com/post/using-the-ssh-config-file/
