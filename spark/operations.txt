@@ -2,7 +2,7 @@ df.na.drop(subset=["col_X"])
 
 df.filter(df.col_X.isNotNull())
 
-# cast types
+# cast date types
 from pyspark.sql.types import IntegerType
 
 df = df.withColumn("pipe_width", F.col("pipe_width").cast(IntegerType()))
@@ -18,6 +18,9 @@ df2 = df.select(
     'date_str', 
     from_unixtime(unix_timestamp('date_str', 'MM/dd/yyy')).alias('date')
 )
+
+data_types_change = prognostico_raw.withColumn("date", from_unixtime(unix_timestamp('date','yyyy/MM/dd')))
+data_types_change = data_types_change.withColumn("date", F.col("date").cast(DateType()))
 
 # Using spark functions timestamp
 
