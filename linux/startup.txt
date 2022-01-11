@@ -132,6 +132,12 @@ Add various hosts ->
     # UseKeychain yes
     IdentityFile ~/.ssh/id_rsa_academy
 
+Refer to SSH Command
+
+git clone git@<host-name>:v3/AngloDevOps/DA-S3/angloamerican.s3.bim.etl
+
+git@github.com-anglo:v3/AngloDevOps/DA-S3/angloamerican.s3.bim.etl
+
 # Install docker 
 
 https://linuxconfig.org/manjaro-linux-docker-installation
