@@ -1,0 +1,33 @@
+UBUNTU MIGRATION STEPS:
+
+1. Download ISO file                                            |Done
+                                                                
+2. Create bootable usb                                          |        
+
+3. Quantify the files needed from Manjaro                       |
+
+    - Firefox bookmarks and data
+    - ssh config file
+
+4. Backup all files on HD                                       |
+
+5. Write list of NB programs to install on new Ubuntu OS        |
+
+    - MS teams
+    - VS code
+    - Azure storage explorer
+    - google chat
+    - spotify
+    - slack
+    - gchat
+    - google chrome
+    - anaconda
+
+6. BIOS settings                                                |
+    
+    F2 - tap until enter the BIOS comes up
+    F12 - to enter boot selection menu
+
+    disable secure boot
+    UEFI mode on
+    RAID off

@@ -81,21 +81,13 @@
     - \d
 
 
-* REAL LIFE DEBUGGING 
+* DEBUGGING 
 
 python3 /opt/airflow/dags/python_scripts/process_xml.py'
 
     - Show docker file
     - Show path in pytho script
     - Show log file error
-
-
-
-
-
-
-
-
 
 
 # Setup:
