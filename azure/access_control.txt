@@ -1,0 +1,12 @@
+## Granting access to specific resource groups
+
+    * Go to resource group IAM section
+
+    * Select view my access to find the group
+
+        mneu-rg-dev-das3bim-001-Contributor
+        aa-az-da-s3bim-developers
+
+    * select the group -> select members
+        add members
+        
