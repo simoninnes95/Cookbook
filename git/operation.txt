@@ -26,3 +26,6 @@ ELSE you have pushed your changes to remote
 
 git revert HEAD
 
+# cloning with multiple accounts
+
+git clone git@<HOST-NAME-SSHCONFIG>:<REPO-DETAILS>
