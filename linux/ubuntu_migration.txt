@@ -1,17 +1,22 @@
 UBUNTU MIGRATION STEPS:
 
-1. Download ISO file                                            |Done
-                                                                
-2. Create bootable usb                                          |        
+1. Download ISO file                                            
 
-3. Quantify the files needed from Manjaro                       |
+    Verify installation: 
+    https://ubuntu.com/tutorials/how-to-verify-ubuntu#6-check-the-iso
+                                                                
+2. Create bootable usb   
+  
+    Used Balena Etcher on Mac OS                                             
+
+3. Quantify the files needed from Manjaro                       
 
     - Firefox bookmarks and data
     - ssh config file
 
-4. Backup all files on HD                                       |
+4. Backup all files on HD                                       
 
-5. Write list of NB programs to install on new Ubuntu OS        |
+5. Write list of NB programs to install on new Ubuntu OS        
 
     - MS teams
     - VS code
@@ -23,7 +28,7 @@ UBUNTU MIGRATION STEPS:
     - google chrome
     - anaconda
 
-6. BIOS settings                                                |
+6. BIOS settings                                                
     
     F2 - tap until enter the BIOS comes up
     F12 - to enter boot selection menu
