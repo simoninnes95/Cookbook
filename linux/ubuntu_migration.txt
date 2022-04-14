@@ -36,3 +36,5 @@ UBUNTU MIGRATION STEPS:
     disable secure boot
     UEFI mode on
     RAID off
+
+    Done
