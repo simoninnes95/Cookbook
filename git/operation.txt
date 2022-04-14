@@ -39,7 +39,6 @@
 
 # git commit
 
-git commit
 
     You want to make a commit! Awesome! Here's how you do it:
 
@@ -47,5 +46,14 @@ git commit
         git commit -a: This will make a commit and add all changed files, and will open an editor to enter your commit message. This is the same as doing git add . && git commit.
         git commit -m "commit message": Skip the editor and put your entire message in the command line!
         git commit -a -m "commit message": Combine them all! Fab.
+
+# git push
+
+    Once you make a commit, you will need to push your changes to the server to make it visible to the world. Once you push, your branch and commit(s) will be visible to others.
+
+        git push branch-name or git push origin HEAD: Push your branch upstream. You can use either version; using origin HEAD is simply a more verbose way of pushing. It signifies you are pushing the tip (HEAD) your branch to the same name on the remote origin.
+        git push origin -f branch-name or git push origin +branch-name: exclamation exclamation exclamation BE CAREFUL: This is a potentially scary command, and you should only use it if you really know what you are doing. It will overwrite the branch you specified on the remote repository with your local copy of the branch. exclamation exclamation exclamation
+
+
 
 
