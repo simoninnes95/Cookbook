@@ -54,6 +54,16 @@
         git push branch-name or git push origin HEAD: Push your branch upstream. You can use either version; using origin HEAD is simply a more verbose way of pushing. It signifies you are pushing the tip (HEAD) your branch to the same name on the remote origin.
         git push origin -f branch-name or git push origin +branch-name: exclamation exclamation exclamation BE CAREFUL: This is a potentially scary command, and you should only use it if you really know what you are doing. It will overwrite the branch you specified on the remote repository with your local copy of the branch. exclamation exclamation exclamation
 
+# git log
+
+    Show the history of all branches and their commits. Useful for seeing the most recent commit and getting commit hashes.
+
+        git log: Show all commits on this branch, along with the commit hash, author, date and message.
+        git log --oneline: Show a simplified version of the above command, showing only the commit hash and commit message.
+        git log --graph: Show a graph of the commit history for your branch. (AWESOME)
+        git log --max-count <n>: Limit the number of commits shown.
+        git log --oneline --graph --max-count 50: Combined them all! Woo!
+
 
 
 
