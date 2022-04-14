@@ -1,38 +1,51 @@
 # new branch
 
-git checkout -b <new-branch-name>
+    git checkout -b <new-branch-name>
 
 # new branch based on some branch
 
-git checkout -b <new-branch-name> <old-branch>
+    git checkout -b <new-branch-name> <old-branch>
 
 # set upstream branch
 
-check history -> $ git branch -vv
-set upstream -> $ git push -u origin <new-branch-name>
+    check history -> $ git branch -vv
+    set upstream -> $ git push -u origin <new-branch-name>
 
-then commit -> git commit -m "commit message"
+    then commit -> git commit -m "commit message"
 
 # delete branch locally
 
-git branch -d localBranchName
+    git branch -d localBranchName
 
 # delete branch remotely
 
-git push origin --delete remoteBranchName
+    git push origin --delete remoteBranchName
 
 # revert committed changes not pushed to remote branch
 
-IF you have NOT pushed your changes to remote
+    IF you have NOT pushed your changes to remote
 
-git reset HEAD~1
+    git reset HEAD~1
 
-Check if the working copy is clean by git status.
+    Check if the working copy is clean by git status.
 
-ELSE you have pushed your changes to remote
+    ELSE you have pushed your changes to remote
 
-git revert HEAD
+    git revert HEAD
 
 # cloning with multiple accounts
 
-git clone git@<HOST-NAME-SSHCONFIG>:<REPO-DETAILS>
+    git clone git@<HOST-NAME-SSHCONFIG>:<REPO-DETAILS>
+
+# git commit
+
+git commit
+
+    You want to make a commit! Awesome! Here's how you do it:
+
+        git commit: This will make a commit of the files you have staged using git add, and will open a VIM editor (or whichever editor you have configured in your .gitconfig) to enter your commit message.
+        git commit -a: This will make a commit and add all changed files, and will open an editor to enter your commit message. This is the same as doing git add . && git commit.
+        git commit -m "commit message": Skip the editor and put your entire message in the command line!
+        git commit -a -m "commit message": Combine them all! Fab.
+
+
