@@ -26,3 +26,15 @@
     install on ubuntu python3-venv first to use virtual envs
 
     python3 -m venv <name-of-environment>
+
+# Activate the python venv
+
+    $ source <env-name>/bin/activate 
+
+# Deactivate the venv
+
+    # deactivate
+
+# Delete virtual env
+
+    $ sudo rm -r <env-name>
