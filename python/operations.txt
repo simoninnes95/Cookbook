@@ -1,22 +1,28 @@
 # Breaking up big csv files
 
-dfs = pd.read_csv('/home/user/Downloads/CIS_Automotive_Kaggle_Sample.csv', sep=',', chunksize=20000)
+    dfs = pd.read_csv('/home/user/Downloads/CIS_Automotive_Kaggle_Sample.csv', sep=',', chunksize=20000)
 
-count = 1
+    count = 1
 
-for chunk in dfs:
-    chunk.to_csv(f'/home/user/Downloads/CIS_Automotive_Kaggle_Sample_{count}.csv')
-    count += 1
+    for chunk in dfs:
+        chunk.to_csv(f'/home/user/Downloads/CIS_Automotive_Kaggle_Sample_{count}.csv')
+        count += 1
 
 # check if path exists
 
-from os import path
+    from os import path
 
-path.exists("file.txt")
+    path.exists("file.txt")
 
 # writing json
 
-import json
+    import json
 
-with open('data.txt', 'w') as outfile:
-    json.dump(data, outfile)
+    with open('data.txt', 'w') as outfile:
+        json.dump(data, outfile)
+
+# Create python virtual environment
+
+    install on ubuntu python3-venv first to use virtual envs
+
+    python3 -m venv <name-of-environment>
