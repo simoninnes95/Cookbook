@@ -1,39 +1,47 @@
 # change shell 
 
-$ chsh
+    $ chsh
 
-/root is the location of the system User
+    /root is the location of the system User
 
 # To access /root go to -> 
 
-$ sudo su 
+    $ sudo su 
 
 # To look up connection settings and configuration of x server
 
-$ xrandr
+    $ xrandr
 
 # PCI configs
 
-$ mhwd --listinstalled
+    $ mhwd --listinstalled
 
 # To view nvidia settings
 
-$ nvidia-settings
+    $ nvidia-settings
 
 # Check process priotities
 
-There are a total of 140 priorities and two distinct priority ranges 
-implemented in Linux. The first one is a nice value (niceness) which 
-ranges from -20 (highest priority value) to 19 (lowest priority value) 
-and the default is 0, this is what we will uncover in this guide. 
-The other is the real-time priority, which ranges from 1 to 99 by default, 
-then 100 to 139 are meant for user-space.
+    There are a total of 140 priorities and two distinct priority ranges 
+    implemented in Linux. The first one is a nice value (niceness) which 
+    ranges from -20 (highest priority value) to 19 (lowest priority value) 
+    and the default is 0, this is what we will uncover in this guide. 
+    The other is the real-time priority, which ranges from 1 to 99 by default, 
+    then 100 to 139 are meant for user-space.
 
-$ ps -eo pid,ppid,ni,comm
+    $ ps -eo pid,ppid,ni,comm
 
-alternative
+    alternative
 
-$ top
-$ htop
+    $ top
+    $ htop
 
-https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
+    https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
+
+# extract tar file
+
+    $ sudo tar xzvf <tar-file-name>.tar.gz
+
+# remove non empty directory
+
+    $ rm -r </directory-name>
