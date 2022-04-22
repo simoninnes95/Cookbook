@@ -64,6 +64,14 @@
         git log --max-count <n>: Limit the number of commits shown.
         git log --oneline --graph --max-count 50: Combined them all! Woo!
 
+# show git branches
 
+    git status
+
+    # local branches
+    git branch 
+
+    # remote branches
+    git branch -r
 
 
