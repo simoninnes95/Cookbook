@@ -102,7 +102,7 @@ Copy OTP code -> DWN89TCPG
 
 # Add multiple git accounts
 
-https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e
+https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e #Try this first
 
 https://docs.github.com/en/github/authenticating-to-github/troubleshooting-ssh/error-permission-denied-publickey
 
