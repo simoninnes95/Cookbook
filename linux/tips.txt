@@ -45,3 +45,7 @@
 # remove non empty directory
 
     $ rm -r </directory-name>
+
+# Check ports in user
+
+    sudo lsof -i -P -n | grep LISTEN
