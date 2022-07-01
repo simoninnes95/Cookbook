@@ -1,0 +1,7 @@
+# postgres image not spinning up
+
+    docker ps
+
+    api-down / docker-compose down
+
+    docker volumes prune
