@@ -49,3 +49,19 @@
 # Check ports in user
 
     sudo lsof -i -P -n | grep LISTEN
+
+# Close open port
+
+    sudo kill $(sudo lsof -t -i:3000)
+
+# Check env variables
+
+    env
+
+# Check shell
+
+    ps -p $$
+
+# Check available shells
+
+    cat /etc/shells

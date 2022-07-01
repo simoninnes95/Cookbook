@@ -1,8 +1,8 @@
-$ chmod +x <fileName>
+    $ chmod +x <fileName>
 
-$ ./fileName
-
+    $ ./fileName
 
 get architecure on linux 
 
-$ uname -m
+    $ uname -m
+

@@ -1,3 +1,12 @@
 Include more information
 
-$ docker-compose --verbose up
+    $ docker-compose --verbose up
+
+# List docker containers
+
+    $ docker ps
+
+# Restart
+
+    $ sudo systemctl restart docker
+
