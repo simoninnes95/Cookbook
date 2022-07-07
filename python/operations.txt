@@ -27,6 +27,10 @@
 
     python3 -m venv <name-of-environment>
 
+# Create virtual env with python version of choice
+
+    virtualenv -p /usr/bin/python2.7 venv
+
 # Activate the python venv
 
     $ source <env-name>/bin/activate 
