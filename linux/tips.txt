@@ -48,20 +48,30 @@
 
 # Check ports in user
 
-    sudo lsof -i -P -n | grep LISTEN
+    $ sudo lsof -i -P -n | grep LISTEN
 
 # Close open port
 
-    sudo kill $(sudo lsof -t -i:3000)
+    $ sudo kill $(sudo lsof -t -i:3000)
 
 # Check env variables
 
-    env
+    $ env
 
 # Check shell
 
-    ps -p $$
+    $ ps -p $$
 
 # Check available shells
 
-    cat /etc/shells
+    $ cat /etc/shells
+
+# Check Path variable
+
+    $ echo "$PATH"
+
+    $ echo "${PATH//:/$'\n'}"
+
+# Add to your path
+
+    $ export PATH=$PATH:/opt/games
