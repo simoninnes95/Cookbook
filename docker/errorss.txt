@@ -5,3 +5,19 @@
     api-down / docker-compose down
 
     docker volumes prune
+
+# solve api tests not passing
+
+    api-down
+
+    # comment out lines 41-59
+
+    api-up
+
+    dbmate drop
+
+    api-down
+
+    # uncomment lines 41-59 and make sure container name in line 43 is running
+
+    api-upmt
