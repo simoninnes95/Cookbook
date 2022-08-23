@@ -1,0 +1,3 @@
+# View all policies:
+
+    select * from pg_policies;
