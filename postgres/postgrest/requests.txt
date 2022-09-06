@@ -1,0 +1,5 @@
+# Create a request 
+
+    date_string = date_range_start.strftime("%Y-%m-%d")
+    r = requests.get(url=f"https://<database-url>/<table-name>pi_tag=gte.{pi_tag}&timestamp=gte.{date_string}", headers=headers)
+    r.json() 
