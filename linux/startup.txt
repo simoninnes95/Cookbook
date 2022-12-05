@@ -112,6 +112,8 @@ https://stackoverflow.com/questions/47455300/ssh-config-bad-configuration-option
 
 generate a second set of ssh keys using above steps
 
+# config example
+
 create a config file -> $ touch ~/.ssh/config
 
 Add various hosts ->
