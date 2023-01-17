@@ -1,0 +1,7 @@
+# Start postgres
+
+    $ brew services start postgresql@15
+
+    $ brew services stop <service-name>
+
+    $ brew services list
