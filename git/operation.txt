@@ -75,3 +75,10 @@
     git branch -r
 
 
+# git rebase
+
+    git reset --hard origin/feature/5172/ingest_pi_config
+
+    git push -f
+
+
