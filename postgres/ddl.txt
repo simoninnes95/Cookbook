@@ -1,0 +1,7 @@
+postgresql fk syntax
+
+    [CONSTRAINT fk_name]
+    FOREIGN KEY(fk_columns) 
+    REFERENCES parent_table(parent_key_columns)
+    [ON DELETE delete_action]
+    [ON UPDATE update_action]
