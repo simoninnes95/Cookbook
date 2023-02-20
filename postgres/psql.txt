@@ -1,0 +1,9 @@
+psql
+
+    list tables
+
+        \dt
+
+    list schema of table
+
+        \d <table-name>
