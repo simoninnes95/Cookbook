@@ -7,3 +7,13 @@ psql
     list schema of table
 
         \d <table-name>
+
+    how to drop role
+
+        https://phoenixnap.com/kb/delete-postgres-user
+
+        REASSIGN OWNED BY myuser TO postgres;
+
+        DROP OWNED BY myuser;
+
+        DROP USER myuser;
