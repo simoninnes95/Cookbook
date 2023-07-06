@@ -25,7 +25,7 @@
 
     IF you have NOT pushed your changes to remote
 
-    git reset HEAD~1
+    git reset HEAD~4 # This does 4 commits
 
     Check if the working copy is clean by git status.
 
