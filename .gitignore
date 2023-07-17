@@ -1,3 +1,4 @@
 /machine_learning/tensorflow/tf-venv
 /python/fastapi/fastapi-venv
+/machine_learning/data_science_handbook/ds-handbook
 .env
