@@ -2,3 +2,4 @@
 /python/fastapi/fastapi-venv
 /machine_learning/data_science_handbook/ds-handbook
 .env
+/machine_learning/pytorch/data/FashionMNIST/
