@@ -1,0 +1,23 @@
+
+which python
+python -V
+pyenv versions
+
+#install the version you want
+pyenv install 3.11.9           
+
+cd /path/to/your/project
+pyenv local 3.11.9             
+
+pyenv virtualenv 3.11.9 <venv-name>
+pyenv local <venv-name>
+python -V
+
+
+# If you want to attach Jupyter Kenel for .ipynb
+
+pip install --upgrade pip
+pip install ipykernel jupyter
+python -m ipykernel install --user --name "cookbook-311" --display-name "Python (cookbook-311)"
+
+
