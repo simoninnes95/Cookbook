@@ -1,0 +1,84 @@
+
+# Delete minikube
+
+minikube delete
+
+minikube start --driver=docker --cpus=6 --memory=12g --disk-size=60g
+
+minikube config set cpus 6
+
+minikube config set memory 12288
+
+minikube config set disk-size 60g
+
+
+minikube start --nodes=2 --driver=docker
+
+# See nodes
+kubectl get nodes
+
+# Should output something along these lines
+NAME       STATUS   ROLES           AGE    VERSION
+minikube   Ready    control-plane   3m5s   v1.34.0
+
+
+kubectl describe node minikube | sed -n '/Capacity:/,/Allocated resources:/p'
+
+Capacity:
+  cpu:                8
+  ephemeral-storage:  234492896Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  hugepages-32Mi:     0
+  hugepages-64Ki:     0
+  memory:             13008772Ki
+  pods:               110
+Allocatable:
+  cpu:                8
+  ephemeral-storage:  234492896Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  hugepages-32Mi:     0
+  hugepages-64Ki:     0
+  memory:             13008772Ki
+  pods:               110
+System Info:
+  Machine ID:                 21b69967bf0148ce8d4daa9fde29309a
+  System UUID:                21b69967bf0148ce8d4daa9fde29309a
+  Boot ID:                    4f19a4c0-b5c0-4560-9ab3-ef2f80276c31
+  Kernel Version:             6.10.14-linuxkit
+  OS Image:                   Ubuntu 22.04.5 LTS
+  Operating System:           linux
+  Architecture:               arm64
+  Container Runtime Version:  docker://28.4.0
+  Kubelet Version:            v1.34.0
+  Kube-Proxy Version:         
+PodCIDR:                      10.244.0.0/24
+
+kubectl top nodes
+
+PodCIDRs:                     10.244.0.0/24
+Non-terminated Pods:          (7 in total)
+  Namespace                   Name                                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-66bc5c9577-9dstj            100m (1%)     0 (0%)      70Mi (0%)        170Mi (1%)     3m11s
+  kube-system                 etcd-minikube                       100m (1%)     0 (0%)      100Mi (0%)       0 (0%)         3m17s
+  kube-system                 kube-apiserver-minikube             250m (3%)     0 (0%)      0 (0%)           0 (0%)         3m17s
+  kube-system                 kube-controller-manager-minikube    200m (2%)     0 (0%)      0 (0%)           0 (0%)         3m17s
+  kube-system                 kube-proxy-r582g                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         3m11s
+  kube-system                 kube-scheduler-minikube             100m (1%)     0 (0%)      0 (0%)           0 (0%)         3m17s
+  kube-system                 storage-provisioner                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         3m16s
+
+
+kubectl get nodes -o wide
+
+NAME       STATUS   ROLES           AGE     VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+minikube   Ready    control-plane   4m28s   v1.34.0   192.168.49.2   <none>        Ubuntu 22.04.5 LTS   6.10.14-linuxkit   docker://28.4.0
+
+# Add metrics
+minikube addons enable metrics-server
+
+kubectl top nodes
+
+NAME       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+minikube   368m         4%       1612Mi          12%         
