@@ -1,0 +1,5 @@
+https://sortvisualizer.com/bubblesort/
+
+https://www.toptal.com/developers/sorting-algorithms
+
+https://visualgo.net/en
