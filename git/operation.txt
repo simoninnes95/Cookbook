@@ -82,3 +82,8 @@
     git push -f
 
 
+# commit history for PRs
+
+    git log --reverse --no-merges --pretty='- %s' origin/$(git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2)..HEAD
+
+
