@@ -1,0 +1,7 @@
+# enable ssh
+
+    sudo systemctl enable --now ssh
+
+# check ssh status  
+
+    sudo systemctl status ssh

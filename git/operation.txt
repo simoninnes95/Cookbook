@@ -89,3 +89,7 @@
 # submodule init
 
     git submodule update --init --recursive
+
+# remove submodule
+
+    git submodule deinit -f path/to/submodule
