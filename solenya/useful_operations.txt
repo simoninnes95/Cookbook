@@ -47,6 +47,18 @@
 
     gcloud auth application-default login
 
+
+# Logs queries
+
+    resource.type="k8s_container" 
+    resource.labels."cluster_name"="<cluster-name" 
+    resource.labels."location"="<location>" 
+    -- resource.labels.container_name=~"prefect"
+    -- severity=ERROR
+    --  timestamp >= "2025-10-30T00:16:23.000Z" 
+    --  timestamp <= "2025-10-30T05:48:54.000Z"
+    resource.labels.container_name="postgres"
+
 ###================ FERMION ================###
 
 # Run the fermion front end
