@@ -1,0 +1,57 @@
+###================ KUBERNETES ================###
+
+# Port forwarding in kubernetes (workflow service)
+
+    kubectl port-forward -n <namespace> service/<service-name> 4200:4200 
+
+# Kubernetes GUI for all running pods
+
+    octant
+
+###================ SKAFFOLD ================###
+
+# Skaffold build and run with port forwarding
+
+    skaffold dev -n <namespace> 
+
+# Skaffold run only without port forwarding
+
+    skaffold run -n <namespace>
+
+
+###================ UV ================###
+
+# Sync all uv packages
+
+    uv sync --all-packages
+
+# Run data version control with uv
+
+    uv run dvc pull zoo/<data-version>.pth.dvc
+
+# Run quarto docs
+
+    uv run quarto preview
+
+###================ API ================###
+
+# Run api tests
+
+    # Make sure you are in the api directory
+    
+    uv run pytests tests/e2e
+
+###================ GCP ================###
+
+# Authenticate to gcloud via cli
+
+    gcloud auth application-default login
+
+###================ FERMION ================###
+
+# Run the fermion front end
+
+    bun run dev
+
+
+
