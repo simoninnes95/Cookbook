@@ -93,3 +93,17 @@
 # remove submodule
 
     git submodule deinit -f path/to/submodule
+
+# Submodules
+
+        You can deinit the submodule
+        You can just go to the branch and ensure your local one points to main.
+        
+        This works as well:
+        # from superproject root
+        git -C services/deuteron fetch --all
+        git -C services/deuteron checkout ae1905 
+
+        git add services/deuteron
+        git commit -m "Restore submodule pointer: services/deuteron @ ae1905 "
+        git push
