@@ -1,0 +1,15 @@
+
+# Example of a Person type definition
+type Person {
+    id: ID!
+    name: String! # ! indicates a non-nullable field
+    age: Int
+    posts: [Post!]! # Adding a relationship between Person and Post
+}
+
+type Post {
+    id: ID!
+    title: String!
+    author: Person!
+}
+

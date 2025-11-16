@@ -1,0 +1,53 @@
+# Query to fetch all persons' names
+
+{
+  allPersons {
+    name
+  }
+}
+
+# Expected Response
+{
+  "allPersons": [
+    { "name": "Johnny" },
+    { "name": "Sarah" },
+    { "name": "Alice" }
+  ]
+}
+
+# Query to fetch all persons with their ages and post titles
+{
+  allPersons {
+    name
+    age
+    posts {
+      title
+    }
+  }
+}
+
+# Expected Response
+{
+  "allPersons": [
+    {
+      "name": "Johnny",
+      "age": 30,
+      "posts": [
+        { "title": "GraphQL Basics" },
+        { "title": "Advanced GraphQL" }
+      ]
+    },
+    {
+      "name": "Sarah",
+      "age": 25,
+      "posts": [
+        { "title": "Introduction to Programming" }
+      ]
+    },
+    {
+      "name": "Alice",
+      "age": null,
+      "posts": []
+    }
+  ]
+}

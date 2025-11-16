@@ -1,0 +1,13 @@
+# Definitions:
+
+- schema.graphql: Contains the GraphQL schema definitions.
+- queries.graphql: Contains GraphQL queries and expected responses. (follow a request / response pattern)
+- Mutations have 3 types - Create, Update, Delete (follow a request / response pattern)
+- subscriptions - represent a stream of data that is sent to the client
+
+    subscription {
+      personAdded {
+        name
+        age
+      }
+    }
