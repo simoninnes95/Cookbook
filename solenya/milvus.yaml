@@ -1,0 +1,154 @@
+# This file was not actually used in the initial benchmark, it will be used once I change over to the 
+# official helm-operator https://github.com/zilliztech/milvus-operator
+
+{{- if .Values.milvus.enabled }}
+{{- if .Values.milvus.useOperator }}
+---
+apiVersion: milvus.io/v1beta1
+kind: Milvus
+metadata:
+  name: milvus-cluster
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "helm.pruneLabels" . | nindent 4 }}
+    app.kubernetes.io/component: milvus
+spec:
+  mode: cluster
+  components: 
+    image: milvusdb/milvus:v2.6.0
+  config: {}
+  dependencies:
+    msgStreamType: woodpecker
+    
+    etcd:
+      inCluster:
+        deletionPolicy: Delete
+        pvcDeletion: true
+        values:
+          replicaCount: {{ .Values.milvus.etcd.replicas }}
+          resources:
+            {{- toYaml .Values.milvus.etcd.resources | nindent 12 }}
+    
+    storage:
+      inCluster:
+        deletionPolicy: Delete
+        pvcDeletion: true
+        values:
+          mode: standalone
+          resources:
+            {{- toYaml .Values.milvus.minio.resources | nindent 12 }}
+          persistence:
+            size: {{ .Values.milvus.minio.storage.size }}
+            storageClass: {{ .Values.milvus.storage.storageClass }}
+  
+  components:
+    proxy:
+      replicas: {{ .Values.milvus.cluster.proxy.replicas }}
+      resources:
+        {{- toYaml .Values.milvus.cluster.proxy.resources | nindent 8 }}
+    
+    queryNode:
+      replicas: {{ .Values.milvus.cluster.queryNode.replicas }}
+      resources:
+        {{- toYaml .Values.milvus.cluster.queryNode.resources | nindent 8 }}
+    
+    dataNode:
+      replicas: {{ .Values.milvus.cluster.dataNode.replicas }}
+      resources:
+        {{- toYaml .Values.milvus.cluster.dataNode.resources | nindent 8 }}
+    
+    indexNode:
+      replicas: {{ .Values.milvus.cluster.indexNode.replicas }}
+      resources:
+        {{- toYaml .Values.milvus.cluster.indexNode.resources | nindent 8 }}
+    
+    {{- if .Values.nodeSelectorKey }}
+    nodeSelector:
+      {{ .Values.nodeSelectorKey }}: {{ .Values.milvus.nodePool | default "default" }}
+    {{- end }}
+  
+  config:
+    minio:
+      bucketName: milvus-bucket
+    
+    etcd:
+      endpoints:
+        - etcd:2379
+    
+    common:
+      storagePath: /var/lib/milvus/data
+{{- else }}
+---
+# Note: When useOperator is false, Milvus is deployed via helmfile
+# This is a placeholder ConfigMap for configuration purposes
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: milvus-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "helm.pruneLabels" . | nindent 4 }}
+    app.kubernetes.io/component: milvus-config
+data:
+  milvus.yaml: |
+  # Milvus configuration
+  etcd:
+    endpoints:
+      - milvus-zilliztech-etcd:2379
+  
+    minio:
+      address: milvus-zilliztech-minio
+      port: 9000
+      accessKeyID: {{ .Values.milvus.minio.accessKeyID }}
+      secretAccessKey: {{ .Values.milvus.minio.secretAccessKey }}  # pragma: allowlist secret
+      useSSL: false
+      bucketName: milvus-bucket  common:
+    storageType: minio
+{{- end }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: milvus-external
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "helm.pruneLabels" . | nindent 4 }}
+    app.kubernetes.io/component: milvus
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: 19530
+      targetPort: 19530
+      protocol: TCP
+      name: grpc
+    - port: 9091
+      targetPort: 9091
+      protocol: TCP
+      name: metrics
+  selector:
+    app.kubernetes.io/name: milvus
+    app.kubernetes.io/instance: milvus-zilliztech
+
+{{- if or (eq .Values.environment "gcp") (eq .Values.environment "load-test") }}
+---
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: milvus-monitoring
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "helm.pruneLabels" . | nindent 4 }}
+    app.kubernetes.io/component: milvus-monitoring
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: milvus
+      app.kubernetes.io/instance: milvus-zilliztech
+  endpoints:
+    - port: metrics
+      interval: 30s
+      path: /metrics
+{{- end }}
+
+{{- end }}
