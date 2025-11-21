@@ -107,3 +107,11 @@
         git add services/deuteron
         git commit -m "Restore submodule pointer: services/deuteron @ ae1905 "
         git push
+
+# Update submodule pointer
+
+    git ls-tree HEAD services/fermion
+    160000 commit <hash>  services/fermion
+
+    git ls-tree origin/main services/fermion
+    160000 commit <hash>  services/fermion
