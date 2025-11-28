@@ -82,3 +82,9 @@ kubectl top nodes
 
 NAME       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
 minikube   368m         4%       1612Mi          12%         
+
+
+# Checking network connection:
+
+kubectl -n milvus run curl --image=curlimages/curl -it --rm --restart=Never -- \
+  curl -v https://minio.tenant.svc.cluster.local:443
