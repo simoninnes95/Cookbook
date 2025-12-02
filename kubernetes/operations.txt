@@ -88,3 +88,7 @@ minikube   368m         4%       1612Mi          12%
 
 kubectl -n milvus run curl --image=curlimages/curl -it --rm --restart=Never -- \
   curl -v https://minio.tenant.svc.cluster.local:443
+
+# Testing connectivity from within the cluster to other services:
+
+$ kubectl exec -n <namespace> -it <pod-name> -- sh
