@@ -92,3 +92,7 @@ kubectl -n milvus run curl --image=curlimages/curl -it --rm --restart=Never -- \
 # Testing connectivity from within the cluster to other services:
 
 $ kubectl exec -n <namespace> -it <pod-name> -- sh
+
+# View resource allocations with kubectl view-allocations:
+
+$ kubectl view-allocations -g namespace
