@@ -86,13 +86,34 @@ minikube   368m         4%       1612Mi          12%
 
 # Checking network connection:
 
-kubectl -n milvus run curl --image=curlimages/curl -it --rm --restart=Never -- \
+  kubectl -n milvus run curl --image=curlimages/curl -it --rm --restart=Never -- \
   curl -v https://minio.tenant.svc.cluster.local:443
 
 # Testing connectivity from within the cluster to other services:
 
-$ kubectl exec -n <namespace> -it <pod-name> -- sh
+  $ kubectl exec -n <namespace> -it <pod-name> -- sh
 
 # View resource allocations with kubectl view-allocations:
 
-$ kubectl view-allocations -g namespace
+  $ kubectl view-allocations -g namespace
+
+# Deployment debugging:
+
+  # Scale down the problematic pods
+  kubectl -n milvus-operator scale deployment milvus-operator --replicas=0
+  kubectl -n main scale deployment milvus-cluster-minio --replicas=0
+
+  # Apply patch
+  kubectl -n main patch deployment milvus-cluster-minio --type='merge' -p '{
+    "spec": {
+      "strategy": {
+        "type": "Recreate",
+        "rollingUpdate": null
+      }
+    }
+  }'
+  deployment.apps/milvus-cluster-minio patched
+
+  # Scale up the pods
+  kubectl -n milvus-operator scale deployment milvus-operator --replicas=1
+
