@@ -117,3 +117,30 @@ minikube   368m         4%       1612Mi          12%
   # Scale up the pods
   kubectl -n milvus-operator scale deployment milvus-operator --replicas=1
 
+
+# Check pod storage:
+
+  kubectl exec -n main -it <pod-name> -- df -h
+  Filesystem      Size  Used Avail Use% Mounted on
+  overlay          29G   20G  8.7G  70% /
+  tmpfs            64M     0   64M   0% /dev
+  /dev/sdb        9.8G  9.7G   59M 100% /export
+  /dev/root        29G   20G  8.7G  70% /data
+  shm              64M     0   64M   0% /dev/shm
+  tmpfs           1.0G   12K  1.0G   1% /run/secrets/kubernetes.io/serviceaccount
+  tmpfs           3.9G     0  3.9G   0% /proc/acpi
+  tmpfs           3.9G     0  3.9G   0% /proc/scsi
+  tmpfs           3.9G     0  3.9G   0% /sys/firmware
+  
+  kubectl exec -n main -it <pod-name> -- sh -lc 'du -h -d 2 /export | sort -h | tail -n 30'
+  id: cannot find name for user ID 1000
+  8.0K    /export/.minio.sys/pool.bin
+  16K     /export/lost+found
+  32K     /export/.minio.sys/config
+  52K     /export/.minio.sys/tmp
+  64K     /export/.minio.sys/buckets
+  361M    /export/.minio.sys
+  361M    /export/.minio.sys/multipart
+  9.4G    /export/milvus-cluster
+  9.4G    /export/milvus-cluster/files
+  9.7G    /export
