@@ -11,3 +11,22 @@
         age
       }
     }
+
+# Item-Item Query Example:
+
+query MyQuery {
+  items(
+    page_number: 1
+    page_size: 10
+    rank_with: {
+      multimodal_query: {
+        item: {
+          selector: item_group_id
+          eq: "<VALUE_FOR_ITEM_GROUP_ID>"}
+      }
+    }
+  ) {
+    ... <ReturnedFieldsHere>
+  }
+}
+
