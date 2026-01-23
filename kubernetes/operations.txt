@@ -144,3 +144,50 @@ minikube   368m         4%       1612Mi          12%
   9.4G    /export/milvus-cluster
   9.4G    /export/milvus-cluster/files
   9.7G    /export
+
+
+# Debug Statefulsets
+
+    kubectl -n main get sts milvus-cluster-etcd -o yaml > /tmp/etcd.sts.live.yaml
+    
+    kubectl -n main get secret
+
+      look for relevant secret === sh.helm.release.v1.<release>.v<revision>
+
+    kubectl -n main get secret sh.helm.release.v1.milvus-cluster-etcd.v<N> \
+      -o jsonpath='{.data.release}' \
+    | base64 -d | base64 -d | gunzip -c \
+    > /tmp/helm_release.json
+
+
+    python - << 'PY'
+    import json
+    obj = json.load(open("/tmp/helm_release.json"))
+    manifest = (
+        obj.get("manifest")
+        or obj.get("release", {}).get("manifest")
+        or obj.get("info", {}).get("manifest")
+    )
+    open("/tmp/etcd.release.manifest.yaml","w").write(manifest)
+    PY
+
+    # Get just the statefulset from the manifest
+    awk '
+    /^kind: StatefulSet/ {inss=1}
+    inss {print}
+    inss && /^---/ {exit}
+  ' /tmp/etcd.release.manifest.yaml > /tmp/etcd.desired.sts.yaml
+
+    # diff the whole file
+    diff -u /tmp/etcd.sts.live.yaml /tmp/etcd.desired.sts.yaml
+
+    # Look for relevant differences
+    diff -u /tmp/etcd.sts.live.yaml /tmp/etcd.desired.sts.yaml \
+  | egrep -n "volumeClaimTemplates|storageClassName|accessModes|resources:|serviceName:|selector:"
+
+
+
+
+
+
+
