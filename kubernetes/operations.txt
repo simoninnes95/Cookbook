@@ -185,7 +185,16 @@ minikube   368m         4%       1612Mi          12%
     diff -u /tmp/etcd.sts.live.yaml /tmp/etcd.desired.sts.yaml \
   | egrep -n "volumeClaimTemplates|storageClassName|accessModes|resources:|serviceName:|selector:"
 
+# Checking Disk Sizes
 
+  $ root@milvus-cluster-milvus-querynode-1:/# du -sh /var/lib/milvus/data
+  3.9G    /var/lib/milvus/data
+
+  $ root@milvus-cluster-milvus-querynode-1:/# df -h /var/lib/milvus/data
+  Filesystem      Size  Used Avail Use% Mounted on
+  
+  /dev/nvme0n1    369G   11G  340G   3% /var/lib/milvus/data
+  $ root@milvus-cluster-milvus-querynode-1:/#
 
 
 

@@ -115,3 +115,9 @@
 
     git ls-tree origin/main services/fermion
     160000 commit <hash>  services/fermion
+
+# git lfs track
+
+    By extension git lfs track "*.psd"
+    By specific file: git lfs track "path/to/largefile.zip"
+    By directory: git lfs track "assets/*"

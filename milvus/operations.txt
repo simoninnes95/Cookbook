@@ -1,0 +1,18 @@
+
+# Get operator pod
+kubectl get pods -n milvus-operator | grep milvus-operator
+milvus-operator-<id>   1/1     Running   0          2d9h
+
+kubectl port-forward pod/milvus-operator-<id> 8080:8080 -n milvus-operator
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+Handling connection for 8080
+
+
+curl http://localhost:8080/metrics
+--> Check for #HELP and #TYPE logs, this indicates that the operator is successfully generating metrics
+
+kubectl get servicemonitor -A | grep milvus
+error: the server doesn't have a resource type "servicemonitor"
+solenyaai@solenyaai-Dell-G15-5530:~/Documents/Solenya/Repos/HyPERON$
