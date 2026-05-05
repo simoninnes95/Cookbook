@@ -121,3 +121,7 @@
     By extension git lfs track "*.psd"
     By specific file: git lfs track "path/to/largefile.zip"
     By directory: git lfs track "assets/*"
+
+# remove submodule mistaken update
+
+    git rm --cached services/trophix && git commit -m "chore: remove accidental trophix submodule reference"
